@@ -8,16 +8,24 @@ sidebar: reference_modules_discovery
 p. ZooKeeper discovery is using "Apache ZooKeeper":http://zookeeper.apache.org/ for automatic discovery and fault detection. It doesn't use multicast and can be used in environments that don't support multicast. Here is a simple sample configuration:
 
 <pre class="prettyprint lang-js">
+zookeeper:
+    enabled: true
+    host: localhost:2181
+    settings.enabled: true
+    discovery.state_publishing.enabled: true
 discovery:
-    type: zookeeper
-    zookeeper.client.host: localhost:2181
+    type: zoo-keeper
 </pre>
 
 p. You'll need to install the @zookeeper@ plugin, by running @bin/plugin install zookeeper@ before (re)starting elasticsearch. You will also need to have a "ZooKeeper":http://zookeeper.apache.org/releases.html server running.
 
-p. The ZooKeeper discovery plugin accepts the following settings (prefixed with @discovery.zookeeper.client@) that can further control the discovery:
+p. The ZooKeeper plugin accepts the following settings (prefixed with @zookeeper@) that can further control the discovery:
 
 |_. Setting |_. Description |
 |@host@|A comma-separated addresses of the ZooKeeper services.|
 |@root@|The name of a ZooKeeper node that should be used for storing discovery information. Defaults to @es@.|
 |@session.timeout@|The session timeout. Defaults to @1m@.|
+|@cluster@|The name of cluster to use as part of zookeeper path. Defaults to the cluster name.|
+|@discovery.state_publishing.enabled@|Enables state publishing through zookeeper. Requires zoo-keeper discovery. Defaults to @false@.|
+|@settings.enabled@|Enables loading of settings from zookeeper. The settings are loaded from @/es/elasticsearch/settings@ and @/es/settings@ Defauls to @false@.|
+
