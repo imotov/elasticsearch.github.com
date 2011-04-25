@@ -14,7 +14,7 @@ zookeeper:
     settings.enabled: true
     discovery.state_publishing.enabled: true
 discovery:
-    type: zoo-keeper
+    type: zoo_keeper
 </pre>
 
 p. You'll need to install the @zookeeper@ plugin, by running @bin/plugin install zookeeper@ before (re)starting elasticsearch. You will also need to have a "ZooKeeper":http://zookeeper.apache.org/releases.html server running.
