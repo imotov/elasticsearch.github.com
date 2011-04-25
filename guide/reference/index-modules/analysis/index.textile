@@ -45,6 +45,8 @@ index :
                 max : 2000
 </pre>
 
+p. All analyzers, tokenizers, and token filters can be configured with a @version@ parameter to control which Lucene version behavior they should use. Possible values are: @2.9@, @3.0@ and @3.1@ (the highest version number is the default option).
+
 h1. Types
 
 h2. Analyzer

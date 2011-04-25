@@ -26,6 +26,7 @@ layout: default
             <li><a href="/guide/reference/api/admin-indices-create-index.html">Create Index</a></li>
             <li><a href="/guide/reference/api/admin-indices-delete-index.html">Delete Index</a></li>
             <li><a href="/guide/reference/api/admin-indices-open-close.html">Open/Close Index</a></li>
+            <li><a href="/guide/reference/api/admin-indices-get-settings.html">Get Settings</a></li>
             <li><a href="/guide/reference/api/admin-indices-get-mapping.html">Get Mapping</a></li>
             <li><a href="/guide/reference/api/admin-indices-put-mapping.html">Put Mapping</a></li>
             <li><a href="/guide/reference/api/admin-indices-delete-mapping.html">Delete Mapping</a></li>
@@ -64,6 +65,7 @@ layout: default
             <li><a href="/guide/reference/api/search/highlighting.html">Highlighting</a></li>
             <li><a href="/guide/reference/api/search/fields.html">Fields</a></li>
             <li><a href="/guide/reference/api/search/script-fields.html">Script Fields</a></li>
+            <li><a href="/guide/reference/api/search/preference.html">Preference</a></li>
             <li><a href="/guide/reference/api/search/facets">Facets</a></li>
             <li><a href="/guide/reference/api/search/named-filters.html">Named Filters</a></li>
             <li><a href="/guide/reference/api/search/search-type.html">Search Type</a></li>
@@ -71,6 +73,7 @@ layout: default
             <li><a href="/guide/reference/api/search/scroll.html">Scroll</a></li>
             <li><a href="/guide/reference/api/search/explain.html">Explain</a></li>
             <li><a href="/guide/reference/api/search/version.html">Version</a></li>
+            <li><a href="/guide/reference/api/search/min-score.html">Min Score</a></li>
         </ul>
     {% endif %}
 
@@ -87,6 +90,7 @@ layout: default
         <li><a href="/guide/reference/api/search/facets/filter-facet.html">Filter</a></li>
         <li><a href="/guide/reference/api/search/facets/query-facet.html">Query</a></li>
         <li><a href="/guide/reference/api/search/facets/statistical-facet.html">Statistical</a></li>
+        <li><a href="/guide/reference/api/search/facets/terms-stats-facet.html">Terms Stats</a></li>
         <li><a href="/guide/reference/api/search/facets/geo-distance-facet.html">Geo Distance</a></li>
     </ul>
     {% endif %}
@@ -113,6 +117,7 @@ layout: default
         <li><a href="/guide/reference/index-modules/store.html">Store</a></li>
         <li><a href="/guide/reference/index-modules/mapper.html">Mapper</a></li>
         <li><a href="/guide/reference/index-modules/translog.html">Translog</a></li>
+        <li><a href="/guide/reference/index-modules/cache.html">Cache</a></li>
     </ul>
     {% endif %}
 
@@ -144,6 +149,8 @@ layout: default
         <li><a href="/guide/reference/index-modules/analysis/ngram-tokenizer.html">NGram</a></li>
         <li><a href="/guide/reference/index-modules/analysis/standard-tokenizer.html">Standard</a></li>
         <li><a href="/guide/reference/index-modules/analysis/whitespace-tokenizer.html">Whitespace</a></li>
+        <li><a href="/guide/reference/index-modules/analysis/uaxurlemail-tokenizer.html">UAX URL Email</a></li>
+        <li><a href="/guide/reference/index-modules/analysis/pathheirarchy-tokenizer.html">Path Hierarchy</a></li>
     </ul>
 
     <h3>Token Filter</h3>
@@ -160,6 +167,7 @@ layout: default
         <li><a href="/guide/reference/index-modules/analysis/snowball-tokenfilter.html">Snowball</a></li>
         <li><a href="/guide/reference/index-modules/analysis/phonetic-tokenfilter.html">Phonetic</a></li>
         <li><a href="/guide/reference/index-modules/analysis/compound-word-tokenfilter.html">Compound Word</a></li>
+        <li><a href="/guide/reference/index-modules/analysis/reverse-tokenfilter.html">Reverse</a></li>
     </ul>
 
     <h3>Char Filter</h3>
@@ -194,6 +202,7 @@ layout: default
 
     <h3>Fields</h3>
     <ul>
+        <li><a href="/guide/reference/mapping/uid-field.html">_uid</a></li>
         <li><a href="/guide/reference/mapping/id-field.html">_id</a></li>
         <li><a href="/guide/reference/mapping/type-field.html">_type</a></li>
         <li><a href="/guide/reference/mapping/source-field.html">_source</a></li>
@@ -203,6 +212,7 @@ layout: default
         <li><a href="/guide/reference/mapping/parent-field.html">_parent</a></li>
         <li><a href="/guide/reference/mapping/routing-field.html">_routing</a></li>
         <li><a href="/guide/reference/mapping/index-field.html">_index</a></li>
+        <li><a href="/guide/reference/mapping/size-field.html">_size</a></li>
     </ul>
 
     <h3>Types</h3>
@@ -234,6 +244,7 @@ layout: default
         <li><a href="/guide/reference/modules/transport.html">Transport</a></li>
         <li><a href="/guide/reference/modules/network.html">Network</a></li>
         <li><a href="/guide/reference/modules/indices.html">Indices</a></li>
+        <li><a href="/guide/reference/modules/cluster.html">Cluster</a></li>
         <li><a href="/guide/reference/modules/scripting.html">Scripting</a></li>
         <li><a href="/guide/reference/modules/threadpool.html">Thread Pool</a></li>
         <li><a href="/guide/reference/modules/node.html">Node</a></li>
@@ -274,6 +285,7 @@ layout: default
     <ul>
         <li><a href="/guide/reference/query-dsl/bool-query.html">bool</a></li>
         <li><a href="/guide/reference/query-dsl/boosting-query.html">boosting</a></li>
+        <li><a href="/guide/reference/query-dsl/ids-query.html">ids</a></li>
         <li><a href="/guide/reference/query-dsl/custom-score-query.html">custom_score</a></li>
         <li><a href="/guide/reference/query-dsl/constant-score-query.html">constant_score</a></li>
         <li><a href="/guide/reference/query-dsl/dis-max-query.html">dis_max</a></li>
@@ -305,8 +317,11 @@ layout: default
         <li><a href="/guide/reference/query-dsl/and-filter.html">and</a></li>
         <li><a href="/guide/reference/query-dsl/bool-filter.html">bool</a></li>
         <li><a href="/guide/reference/query-dsl/exists-filter.html">exists</a></li>
+        <li><a href="/guide/reference/query-dsl/ids-filter.html">ids</a></li>
+        <li><a href="/guide/reference/query-dsl/type-filter.html">type</a></li>
         <li><a href="/guide/reference/query-dsl/geo-bounding-box-filter.html">geo_bbox</a></li>
         <li><a href="/guide/reference/query-dsl/geo-distance-filter.html">geo_distance</a></li>
+        <li><a href="/guide/reference/query-dsl/geo-distance-range-filter.html">geo_distance_range</a></li>
         <li><a href="/guide/reference/query-dsl/geo-polygon-filter.html">geo_polygon</a></li>
         <li><a href="/guide/reference/query-dsl/has-child-filter.html">has_child</a></li>
         <li><a href="/guide/reference/query-dsl/match-all-filter.html">match_all</a></li>

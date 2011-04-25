@@ -17,7 +17,7 @@ p. The following sections lists all the different storage types supported.
 
 h1. File System
 
-p. File system based storage, includes different internal types of how to work with the file system. This is the default storage used. Out of the different types, the best one suited will be automatically chosen (@niofs@ on non windows, and @simplefs@ on windows).
+p. File system based storage, includes different internal types of how to work with the file system. This is the default storage used. Out of the different types, the best one suited will be automatically chosen (@mmapfs@ on solaris/windows 64bit, @simplefs@ on windows 32bit, and @niofs@ for the rest).
 
 p. The following are the different file system based storage types:
 

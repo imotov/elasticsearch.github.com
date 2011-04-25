@@ -30,6 +30,7 @@ p. The @query_string@ top level parameters include:
 | @fuzzy_min_sim@ | Set the minimum similarity for fuzzy queries. Defaults to @0.5@ |
 | @phrase_slop@ | Sets the default slop for phrases. If zero, then exact phrase matches are required.  Default value is @0@.|
 | @boost@ | Sets the boost value of the query. Defaults to @1.0@. |
+| @analyze_wildcard@ | By default, wildcards terms in a query string are not analyzed. By setting this value to @true@, a best effort will be made to analyze those as well. |
 
 h1. Multi Field
 

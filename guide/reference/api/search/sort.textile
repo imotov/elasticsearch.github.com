@@ -41,6 +41,21 @@ h1. Sort Values
 
 p. The sort values for each document returned are also returned as part of the response.
 
+h1. Missing Values
+
+p. Numeric fields support specific handling for missing fields in a doc. The @missing@ value can be @_last@, @_first@, or a custom value (that will be used for missing docs as the sort value). For example:
+
+<pre class="prettyprint lang-js">
+{
+    "sort" : [
+        { "price" : {"missing" : "_last"} },
+    ],
+    "query" : {
+        "term" : { "user" : "kimchy" }
+    }
+}
+</pre>
+
 h1. Geo Distance Sorting
 
 p. Allow to sort by @_geo_distance@. Here is an example:

@@ -1,0 +1,18 @@
+---
+layout: guide
+title: Cache
+cat: guide
+sidebar: reference_index_modules
+---
+
+p. There are different caching inner modules that correspond to an index. They include @filter@, @field@ and others.
+
+h1. Filter Cache
+
+p. The filter cache is responsible to cache the results of filters (used in the query). There are 3 main types of the filter cache: @soft@, @weak@, and @resident@. The type can be set using the @index.cache.filter.type@ and defaults to @soft@ (and, in general, should not be changed).
+
+p. All types support the following settings:
+
+|_. Setting |_. Description |
+|@index.cache.filter.max_size@|The max size of the cache (per search segment in a shard). Defaults to not set (@-1@), which is usually fine with @soft@ cache and proper cacheable filters.|
+|@index.cache.filter.expire@|A time based setting that expires filters after a certain time of inactivity. Defaults to @-1@. For example, can be set to @5m@ for a 5 minute expiry.|

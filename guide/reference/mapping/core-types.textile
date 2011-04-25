@@ -106,7 +106,7 @@ p. The following table lists all the attributes that can be used with a numbered
 
 h1. Date
 
-p. The date type is a special type which maps to JSON string type. It follows a specific format that can be explicitly set. All dates are @UTC@. Internally, a date maps to a number type @long@, with the added parsing stage from string to long and from long to string. An example mapping:
+p. The date type is a special type which maps to JSON string type. It follows a specific format that can be explicitly set. All dates are @UTC@. as. Internally, a date maps to a number type @long@, with the added parsing stage from string to long and from long to string. An example mapping:
 
 <pre class="prettyprint lang-js">
 {
@@ -120,6 +120,8 @@ p. The date type is a special type which maps to JSON string type. It follows a 
     }
 }
 </pre>
+
+p. The date type will also accept a long number representing UTC milliseconds since the epoch, regardless of the format it can handle.
 
 p. The following table lists all the attributes that can be used with a date type:
 

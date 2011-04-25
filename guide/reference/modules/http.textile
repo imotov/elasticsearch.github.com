@@ -18,6 +18,7 @@ p. The following are the settings the can be configured for HTTP:
 |_. Setting |_. Description |
 |@http.port@|A bind port range. Defaults to @9200-9300@.|
 |@http.max_content_length@|The max content of an HTTP request. Defaults to @100mb@|
+|@http.compress@|Support for compression when possible (with Accept-Encoding). Defaults to @true@.|
 
 p. It also shares the uses the common "network settings":network.html.
 

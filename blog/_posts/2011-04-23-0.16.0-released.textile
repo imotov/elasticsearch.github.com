@@ -1,0 +1,19 @@
+---
+layout: blogpost
+title: 0.16.0 Released
+cat: blog
+author: Shay Banon
+nick: kimchy
+---
+
+p. *elasticsearch* version @0.16.0@ has just been released. You can download it "here":/download. This release is quite a big and important one, adding many new features, and fixes several major/critical bugs.
+
+p. Features/enhancements include the ability to update many more index level settings at runtime, several new search types, new facet called term_stats, faster facets execution all around,  upgrade to Lucene 3.1, improved support for many indices (memory wise), faster recover post full restart, much improved shard allocation logic to reduce load, and many more.
+
+p. Many bugs have also been fix, with several critical ones revolving around possible data loss. Its highly recommended to upgrade.
+
+p. All changes are listed in the "0.16.0 download page":/download/2011/04/23/0.16.0.html.
+
+h1. Upgrade Notes
+
+p. The @_id@ field is no longer indexed by default. No functionality is lost by it, but, if the @_id@ field was used in term/terms query/filters, it should be replaced with the new ids query/filter. The issue explaining it is "here":https://github.com/elasticsearch/elasticsearch/issues/868.
