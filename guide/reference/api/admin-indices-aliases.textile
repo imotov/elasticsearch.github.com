@@ -54,3 +54,21 @@ $ curl -XPOST 'http://localhost:9200/_aliases' -d '
 </pre>
 
 p. It is an error to index to an alias which points to more than one index.
+
+p. An alias can also have a filter associated with it. The filter can be defined using the "Query DSL":/guide/reference/query-dsl and is applied to all "Search":search, "Count":count.html, "Delete By Query":delete-by-query.html and "More Like This":more-like-this.html operations with this alias.
+
+<pre class="prettyprint">
+$ curl -XPOST 'http://localhost:9200/_aliases' -d '
+{
+    "actions" : [
+        {
+            "add" : {
+                 "index" : "test1",
+                 "alias" : "alias2",
+                 "filter" : { "term" : { "user" : "kimchy" } }
+            }
+        }
+    ]
+}'
+</pre>
+
